@@ -4,7 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const port = 5500;
+const port = 8000;
 
 app.use(cors());
 app.use(express.json());
@@ -42,7 +42,7 @@ app.post('/generate-image', async (req, res) => {
         res.json({ image: output[0] });  // 첫 번째 이미지 반환
     } catch (error) {
         console.error("Error during image generation:", error);
-        res.status(500).json({ error: "이미지 생성 중 오류가 발생했습니다." });
+        res.status(500).json({ error: "이미지를 추출할 수 없습니다." });
     }
 });
 
